@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+*/target/
+target
+*/logs/
+.DS_Store
+logs/*
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr

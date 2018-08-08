@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.guzhandong.springframework.boot.elasticsearch.config.HighLevelClientAutoConfigure
