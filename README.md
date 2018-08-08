@@ -1,4 +1,4 @@
-#spring-boot-starter-elasticsearchHighLevelClient
+# spring-boot-starter-elasticsearchHighLevelClient
 
 封装elasticsearch-rest-high-level-client,添加了连接池功能(官方包中没有提供连接池)；同时对接spring-boot-starter
 
