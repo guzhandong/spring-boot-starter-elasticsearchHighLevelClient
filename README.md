@@ -6,7 +6,7 @@
 
 > email : 569199386@qq.com
 
-> springboot versioni : 2.0.2.RELEASE
+> springboot version : 2.0.2.RELEASE
 
 
 
