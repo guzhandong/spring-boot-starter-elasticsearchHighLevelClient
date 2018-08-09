@@ -50,7 +50,9 @@ public class RestHighLevelClient {
             releaseClient();
         }
         try {
-            return elasticsearchClientPool.borrowObject();
+            org.elasticsearch.client.RestHighLevelClient restHighLevelClient = elasticsearchClientPool.borrowObject();
+            threadLocal.set(restHighLevelClient);
+            return restHighLevelClient;
         } catch (Exception e) {
             throw new GetActiveClientException(e);
         }

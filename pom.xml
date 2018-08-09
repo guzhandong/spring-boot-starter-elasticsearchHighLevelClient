@@ -75,12 +75,12 @@
         </plugins>
     </build>
 
-    <!--<distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
             <name>knowlegene Repository</name>
             <url>http://192.168.200.35:8082/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>-->
+    </distributionManagement>
 
 </project>
