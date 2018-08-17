@@ -5,8 +5,9 @@ import org.apache.commons.pool2.impl.AbandonedConfig;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.springframework.beans.factory.DisposableBean;
 
-public class ElasticsearchClientPool extends GenericObjectPool<RestHighLevelClient> {
+public class ElasticsearchClientPool extends GenericObjectPool<RestHighLevelClient> implements DisposableBean {
 
     public ElasticsearchClientPool(PooledObjectFactory factory) {
         super(factory);
@@ -18,5 +19,10 @@ public class ElasticsearchClientPool extends GenericObjectPool<RestHighLevelClie
 
     public ElasticsearchClientPool(PooledObjectFactory factory, GenericObjectPoolConfig config, AbandonedConfig abandonedConfig) {
         super(factory, config, abandonedConfig);
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        close();
     }
 }
