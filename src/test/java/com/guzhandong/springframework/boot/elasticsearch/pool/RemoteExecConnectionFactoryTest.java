@@ -14,7 +14,7 @@ public class RemoteExecConnectionFactoryTest {
 
     public static void main(String[] args) throws Exception {
         ElasticsearchClientConfigure remoteShellProperties = new ElasticsearchClientConfigure();
-        remoteShellProperties.setHosts(new String[]{"192.168.100.104","192.168.100.103"});
+        remoteShellProperties.setHosts(new String[]{"192.168.100.104:9200","192.168.100.103:9200"});
         ElasticsearchClientPoolConfigure elasticsearchClientPoolConfigure = new ElasticsearchClientPoolConfigure();
         elasticsearchClientPoolConfigure.setMinIdle(3);
         elasticsearchClientPoolConfigure.setMaxTotal(4);

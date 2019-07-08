@@ -101,11 +101,7 @@ public class Test {
 ```
 spring:
   es:
-    hosts: 192.168.100.1,192.168.100.2
+    hosts: 192.168.100.1:9200,192.168.100.2:9200
   pool:
 
 ```
-
-## todo list
-
-1. 修复JMX在springboot中和eureka集成导致注册失败，当前默认设置为关闭连接池的JMX来保证集成可用。

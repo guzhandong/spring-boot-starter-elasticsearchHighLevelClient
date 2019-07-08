@@ -6,10 +6,6 @@ public class ElasticsearchClientConfigure {
 
     private String[] hosts;
 
-    /**
-     * default
-     */
-    private int port = 9200;
 
     /**
      * default
@@ -35,14 +31,6 @@ public class ElasticsearchClientConfigure {
         this.hosts = hosts;
     }
 
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
     public String getSchema() {
         return schema;
     }
@@ -63,9 +51,6 @@ public class ElasticsearchClientConfigure {
         return socketTimeOut;
     }
 
-    public void setSocketTimeOut(int socketTimeOut) {
-        this.socketTimeOut = socketTimeOut;
-    }
 
     public int getConnectionRequestTimeOut() {
         return connectionRequestTimeOut;
