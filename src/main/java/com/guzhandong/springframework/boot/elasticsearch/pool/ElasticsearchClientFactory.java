@@ -67,20 +67,6 @@ public class ElasticsearchClientFactory implements PooledObjectFactory<RestHighL
         });
     }
 
-//    @Override
-//    public PooledObject<RestHighLevelClient> makeObject() throws Exception {
-//        Set<String > hostSet = new HashSet<String>(this.elasticsearchClientConfigure.getHosts().length+this.elasticsearchClientConfigure.getHosts().length/3);
-//        for (String h:this.elasticsearchClientConfigure.getHosts()){
-//            hostSet.add(h);
-//        }
-//        HttpHost[] httpHosts = hostSet.stream()
-//                .map(host->new HttpHost(host, elasticsearchClientConfigure.getPort(), elasticsearchClientConfigure.getSchema()))
-//                .toArray(len->new HttpHost[len]);
-//        RestClientBuilder clientBuilder = RestClient.builder(httpHosts);
-//        RestHighLevelClient client = new RestHighLevelClient(clientBuilder);
-//        return new DefaultPooledObject(client);
-//
-//    }
     @Override
     public PooledObject<RestHighLevelClient> makeObject() throws Exception {
         Set<String > hostSet = new HashSet<String>(this.elasticsearchClientConfigure.getHosts().length+this.elasticsearchClientConfigure.getHosts().length/3);

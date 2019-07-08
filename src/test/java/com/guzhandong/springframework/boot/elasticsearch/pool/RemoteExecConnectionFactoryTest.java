@@ -21,15 +21,18 @@ public class RemoteExecConnectionFactoryTest {
         elasticsearchClientPoolConfigure.setTestOnBorrow(true);
         elasticsearchClientPoolConfigure.setTestOnCreate(true);
         elasticsearchClientPoolConfigure.setTestOnReturn(true);
-//        elasticsearchClientPoolConfigure.setBlockWhenExhausted(true);
+        elasticsearchClientPoolConfigure.setBlockWhenExhausted(true);
         elasticsearchClientPoolConfigure.setMinEvictableIdleTimeMillis(1000);
         elasticsearchClientPoolConfigure.setTimeBetweenEvictionRunsMillis(5000);
         ElasticsearchClientPool op = new ElasticsearchClientPool(new ElasticsearchClientFactory(remoteShellProperties), elasticsearchClientPoolConfigure);
         RestHighLevelClient restHighLevelClient = new RestHighLevelClient(op);
+        System.out.println("created connection count : "+ op.getCreatedCount());
+
         System.out.println(restHighLevelClient.ping());
 
         System.out.println("main thread complate");
-
+        op.destroy();
+        op.close();
 
     }
 
